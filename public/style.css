@@ -1,0 +1,63 @@
+ @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+
+.sign {
+    background-color: #4e7edb;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 7%;
+}
+.card {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    height: 500px;
+    border-radius: 25px;
+}
+.navbar {
+    background-color: #4e7edb;
+    display: flex;
+    border-radius: 15px;
+}
+img {
+    display: flex;
+    width: auto;
+    height: 100px;
+}
+h5 {
+    text-align: start;
+}
+nav {
+    color: #ecedf9;
+    width: 500px;
+}
+.card-body {
+    background-color: #4e7edb;
+    height: fit-content;
+    width: 500px;
+    border-radius: 15px;
+}
+label, h1, .btn {
+    color: #ecedf9;
+}
+.btn {
+    background-color: #1204db;
+    border-radius: 5px;
+    width: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.password, .id {
+    background-color: #D9D9D9;
+    border-radius: 25px;
+    border: none;
+    width: 300px;
+}
+label {
+    display: flex;
+    justify-content: start;
+    padding-left: 70px;
+}
+body {
+    font-family: Jacques Francois, sans-serif;
+}
