@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('membersex');
             $table->date('birthday');
             $table->string('profilepic');
+            $table->timestamps();
         });
     }
 

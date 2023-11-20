@@ -4,33 +4,33 @@
     <div class="sidebar regside">
         <a href="{{ route('registration') }}"><i class="fa-solid fa-file-pen"></i> Registration</a>
     </div>
-
-    <div class="container register">
+    <form action="{{ route('regstore') }}" method="POST">
+        @csrf
+        @method('post')
+    <div class="container register" style="width: 70vw;">
         <div class="container registrationlayout text-center">
             <div class="container registerinfo">
-                <form>
                     <div class="mt-3">
                         <label for="eventid" style="color: black;">Event ID:</label>
-                        <input type="password" class="form-control" id="eventid" name="eventid">
+                        <input type="number" class="form-control" id="eventid" name="eventid" required>
                     </div>
                     <div class="mt-3">
-                        <label for="name" style="color: black;">Name:</label>
-                        <input type="password" class="form-control" id="name" name="name">
+                        <label for="participantname" style="color: black;">Name:</label>
+                        <input type="text" class="form-control" id="name" name="participantname" required>
                     </div>
                     <div class="mt-3">
                         <label for="idnumber" style="color: black;">ID No.:</label>
-                        <input type="number" class="form-control" id="idnumber" name="idnumber">
+                        <input type="number" class="form-control" id="idnumber" name="participantid" required>
                     </div>
                     <div class="mt-3">
                         <label for="email" style="color: black;">Email:</label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <input type="email" class="form-control" id="email" name="participantemail" required>
                     </div>
-                </form>
             </div>
             <button class="reg mt-3">Register</button>
         </div>
     </div>
-
+    </form>
   </div>
       
 @endsection

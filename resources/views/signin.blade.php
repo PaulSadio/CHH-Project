@@ -24,13 +24,13 @@
             <div class="container my-3">
                 <label for="id">Enter ID:</label>
                 <div>
-                <input type="text" name="id" class="id text-center">
+                <input type="text" name="id" class="id text-center" required>
                 </div>
             </div>
             <div class="container my-3">
                 <label for="passowrd">Password:</label>
                 <div>
-                <input type="text" name="password" class="password text-center">
+                <input type="text" name="password" class="password text-center" required>
                 </div>
             </div>
             <input type="button" value="Login" class="butn">

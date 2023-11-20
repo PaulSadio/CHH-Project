@@ -11,18 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('adminmemo', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->date('start');
+            $table->date('end');
             $table->timestamps();
-            $table->string('memofile');
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('adminmemo');
+        Schema::dropIfExists('adminhome');
     }
 };

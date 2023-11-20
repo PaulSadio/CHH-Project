@@ -14,6 +14,7 @@
             </div>
             <div class="containertable" style="max-height: 300px">
             <table class="table datatable table-bordered border-dark table-striped mt-3 text-center">
+                <thead>
                 <tr>
                     <th>ID</th>
                     <th>Event Title</th>
@@ -21,12 +22,15 @@
                     <th>Files</th>
                     <th>Action</th>
                 </tr>
+            </thead>
+            <tbody>
+                @foreach ($adminproposal as $adminproposal)
                 <tr>
-                    <td>1</td>
-                    <td>Educate Students</td>
-                    <td>Rosebel Pasquil</td>
+                    <td>{{ $adminproposal->id }}</td>
+                    <td>{{ $adminproposal->proptitle }}</td>
+                    <td>{{ $adminproposal->propname }}</td>
                     <td>
-                        <a href="">File</a>
+                        <a href="" download>{{ $adminproposal->propfile }}</a>
                     </td>
                     <td style="width: 25%">
                         <div class="container d-flex">
@@ -34,63 +38,9 @@
                             <button type="button" class="btn btn-danger mx-3">Decline</button>
                         </div>
                     </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Educate Students</td>
-                    <td>Rosebel Pasquil</td>
-                    <td>
-                        <a href="">File</a>
-                    </td>
-                    <td style="width: 25%">
-                        <div class="container d-flex">
-                            <button type="button" class="btn btn-success mx-3">Approve</button>
-                            <button type="button" class="btn btn-danger mx-3">Decline</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Educate Students</td>
-                    <td>Rosebel Pasquil</td>
-                    <td>
-                        <a href="">File</a>
-                    </td>
-                    <td style="width: 25%">
-                        <div class="container d-flex">
-                            <button type="button" class="btn btn-success mx-3">Approve</button>
-                            <button type="button" class="btn btn-danger mx-3">Decline</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Educate Students</td>
-                    <td>Rosebel Pasquil</td>
-                    <td>
-                        <a href="">File</a>
-                    </td>
-                    <td style="width: 25%">
-                        <div class="container d-flex">
-                            <button type="button" class="btn btn-success mx-3">Approve</button>
-                            <button type="button" class="btn btn-danger mx-3">Decline</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Educate Students</td>
-                    <td>Rosebel Pasquil</td>
-                    <td>
-                        <a href="">File</a>
-                    </td>
-                    <td style="width: 25%">
-                        <div class="container d-flex">
-                            <button type="button" class="btn btn-success mx-3">Approve</button>
-                            <button type="button" class="btn btn-danger mx-3">Decline</button>
-                        </div>
-                    </td>
-                </tr>
+                </tr>              
+                @endforeach
+            </tbody>
 
             </table>
         </div>
