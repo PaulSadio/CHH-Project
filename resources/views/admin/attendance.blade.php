@@ -5,14 +5,9 @@
         <div class="container eventname mt-3">
             <input list="magicHouses" id="eventTitle" name="myHouse" placeholder="Event Name..." />
             <datalist id="magicHouses">
-                <option value="Gryfindor">
-                <option value="Hufflepuff">
-                <option value="Slytherin">
-                <option value="Ravenclaw">
-                <option value="Horned Serpent">
-                <option value="Thunderbird">
-                <option value="Pukwudgie">
-                <option value="Wampus">
+                @foreach ($adminproposal as $adminproposal)
+                <option value="{{ $adminproposal->proptitle }}">
+                @endforeach
             </datalist>
         </div>
     

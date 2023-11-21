@@ -60,7 +60,8 @@ class PageController extends Controller
 
     public function attendance() {
         $attendance = Registrations::all();
-        return view('admin.attendance', ['attendance'=>$attendance]);
+        $adminproposal = Proposals::all();
+        return view('admin.attendance', ['attendance'=>$attendance], ['adminproposal'=>$adminproposal]);
     }
     public function registration() {
         return view('member.memberregistration');
@@ -136,8 +137,8 @@ class PageController extends Controller
         return redirect(route('proposal'));
     }
 
-    public function view() {
-        return view('admin.view');
+    public function view(Memberss $membersss) {
+        return view('admin.view', ['membersss'=>$membersss]);
     }
     
 }
