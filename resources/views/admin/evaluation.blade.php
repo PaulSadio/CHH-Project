@@ -13,21 +13,26 @@
             </div>
             <div class="containertable" style="max-height: 350px">
             <table class="table datatable table-bordered border-dark table-striped text-center">
+                <thead>
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Action</th>
                 </tr>
+            </thead>
+            <tbody>
+                @foreach ($member as $member)
                 <tr>
-                    <td>1</td>
-                    <td>Rosebel Pasquil</td>
+                    <td>{{ $member->id }}</td>
+                    <td>{{ $member->membername }}</td>
                     <td>
                         <div>
-                            <a href="{{ route('view') }}"><i class="fa-solid fa-circle-info"></i> View</a>
-                            
+                            <a href="{{ route('view', ['member'=>$member]) }}"><i class="fa-solid fa-circle-info"></i> View</a>
                         </div>
                     </td>
                 </tr>
+                @endforeach
+            </tbody>
             </table>
         </div>
         </div>

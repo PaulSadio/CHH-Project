@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+       if(!Schema::hasTable('memberss')){
         Schema::create('memberss', function (Blueprint $table) {
             $table->increments('id');
             $table->string('membername');
@@ -22,7 +23,11 @@ return new class extends Migration
             $table->date('birthday');
             $table->string('profilepic');
             $table->timestamps();
+            $table->integer('remarkid')->unsigned();
+            $table->foreign('remarkid')->references('id')->on('remarks');
         });
+       }
+        
     }
 
     /**

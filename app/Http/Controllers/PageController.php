@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\addmember;
 use App\Models\Adminmemo;
+use App\Models\Fundraiser;
 use App\Models\Memberss;
 use App\Models\Proposals;
 use App\Models\Registrations;
+use App\Models\Remarks;
 use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 use Spatie\LaravelIgnition\Http\Requests\UpdateConfigRequest;
@@ -28,16 +30,38 @@ class PageController extends Controller
         return view('admin.treasuryannualfee');
     }
 
-    public function fundraiser() {
-        return view('admin.treasuryfundraiser');
-    }
-
     public function evaluation() {
-        return view('admin.evaluation');
+        $member = Memberss::all();
+        return view('admin.evaluation', ['member'=>$member]);
+    }
+    public function view(Memberss $member, Proposals $adminproposal, Remarks $remarks) {
+        $adminproposal = Proposals::all();
+        $remarks = Remarks::all();
+        return view('admin.view', ['member'=>$member], ['adminproposal'=>$adminproposal], ['remarks'=>$remarks]);
+    }
+    public function viewstore(Request $request) {
+        $data = [
+            'memberremark' => $request -> remark
+        ];
+        $newView = Remarks::create($data);
+        return redirect(route('evaluation'));
     }
 
     public function treasury() {
         return view('admin.treasury');
+    }
+    public function fundraiser() {
+        $fund = Fundraiser::all();
+        return view('admin.treasuryfundraiser', ['fund'=> $fund]);
+    }
+    public function fundstore(Request $request) {
+        $data = [
+            'fundraiser_title' => $request -> fundraiser_title,
+            'fundraiser_amount' => $request -> fundraiser_amount,
+            'fundraiser_date' => $request -> fundraiser_date
+        ];
+        $newFund = Fundraiser::create($data);
+        return redirect(route('fundraiser'));
     }
 
 
@@ -137,8 +161,6 @@ class PageController extends Controller
         return redirect(route('proposal'));
     }
 
-    public function view(Memberss $membersss) {
-        return view('admin.view', ['membersss'=>$membersss]);
-    }
+  
     
 }

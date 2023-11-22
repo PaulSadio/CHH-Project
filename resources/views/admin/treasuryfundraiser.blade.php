@@ -13,65 +13,43 @@
                     </form>
                 </div>
                 <div class="container fundraiserdetails">
-                    <form>
+                    <form action="{{ route('fundstore') }}" method="POST">
+                        @csrf
+                        @method('post')
                         <div class="d-flex">
                             <label for="fundtitle" style="color: black;">Fund Raising Title: </label>
-                            <input type="text" name="fundtitle" placeholder="Enter Value" style="width: 500px;" required>
+                            <input type="text" name="fundraiser_title" placeholder="Enter Value" style="width: 500px;" required>
                         </div>
                         <div class="d-flex mt-3">
                             <label for="totalfundamount" style="color: black">Total Amount: </label>
-                            <input type="number" name="totalfundamount" value="Enter Value" required>
+                            <input type="number" name="fundraiser_amount" value="Enter Value" required>
                         </div>
                         <div class="d-flex mt-3">
                             <label for="eventdate" style="color: black">Date: </label>
-                            <input type="date" name="eventdate" required>
+                            <input type="date" name="fundraiser_date" required>
                             <div class="d-flex justify-content-end" style="margin-left: 500px;">
-                                <button type="button" class="btn btn-success" style="width: 100px;">Add</button>
+                                <button type="submit" class="btn btn-success" style="width: 100px;">Add</button>
                             </div>
                         </div>
                     </form>
                     <div class="containertable" style="max-height: 200px">
                         <table class="table datatable table-bordered border-dark table-striped mt-3 text-center" >
+                            <thead>
                             <tr>
                                 <th>Date</th>
                                 <th>Fund Raiser Title</th>
                                 <th>Amount</th>
                             </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($fund as $fund)
                             <tr>
-                                <td>9/6/23</td>
-                                <td>Movie Festival</td>
-                                <td>5000</td>
+                                <td>{{ $fund->fundraiser_date }}</td>
+                                <td>{{ $fund->fundraiser_title }}</td>
+                                <td>{{ $fund->fundraiser_amount }}</td>
                             </tr>
-                            <tr>
-                                <td>9/6/23</td>
-                                <td>Auction</td>
-                                <td>5000</td>
-                            </tr>
-                            <tr>
-                                <td>9/6/23</td>
-                                <td>Auction</td>
-                                <td>5000</td>
-                            </tr>
-                            <tr>
-                                <td>9/6/23</td>
-                                <td>Auction</td>
-                                <td>5000</td>
-                            </tr>
-                            <tr>
-                                <td>9/6/23</td>
-                                <td>Auction</td>
-                                <td>5000</td>
-                            </tr>
-                            <tr>
-                                <td>9/6/23</td>
-                                <td>Auction</td>
-                                <td>5000</td>
-                            </tr>
-                            <tr>
-                                <td>9/6/23</td>
-                                <td>Auction</td>
-                                <td>5000</td>
-                            </tr>
+                            @endforeach
+                        </tbody>
                         </table>
                     </div>
                 </div>

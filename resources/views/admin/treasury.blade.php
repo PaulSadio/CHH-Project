@@ -12,7 +12,7 @@
                         </div>
                         <div class="d-flex justify-content-between mt-3">
                             <label class="" style="color: black; padding-left: 90px; font-size: 30px;">Fund Raiser: </label>
-                            <input type="number" class="fund text-center">
+                            <input type="number"  class="fund text-center">
                         </div>
                     </div>
                 <input type="number" class="total text-center mt-4">

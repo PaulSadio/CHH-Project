@@ -10,12 +10,12 @@
                         <img src="profile.jpeg" alt="Profile" class="profile" value="{{ $member->profilepic }}">
                     </div>
                     <div class="container text-center">
-                        <input type="file" value="Upload file" class="text-center mt-1" style="width: 250px; border-radius: 0;">
+                        <input type="file" name="profilepic" value="Upload file" class="text-center mt-1" style="width: 250px; border-radius: 0;">
                     </div>
                     <div class="container d-flex flex-row justify-content-center mt-2">
                         <div class="mx-3">
                             <label for="age" style="color: black; padding: 0;">Age:</label>
-                            <input type="number" class="text-center" name="'memberage" placeholder="age" value="{{ $member->memberage }}" style="width: 100px">
+                            <input type="number" class="text-center" name="memberage" placeholder="age" value="{{ $member->memberage }}" style="width: 100px">
                         </div>
                         <div>
                             <label for="sex" style="color: black; padding: 0;">Sex:</label>
@@ -30,21 +30,21 @@
                 <div class="containerprofile detailprofile p-4" style="width: 50%; height: 100%;">
                     <div class="mb-3">
                         <label for="name" style="padding: 0; color:black;">Name:</label>
-                        <input type="text" name="name" value="{{ $member->membername }}" id="name">
+                        <input type="text" name="membername" value="{{ $member->membername }}" id="name">
                     </div>
                     <div class="mb-3">
                         <label for="address" style="padding: 0; color:black;">Address:</label>
-                        <input type="text" name="address" value="{{ $member->memberaddress }}" id="address">
+                        <input type="text" name="memberaddress" value="{{ $member->memberaddress }}" id="address">
                     </div>
                     <div class="mb-3">
                         <label for="email" style="padding: 0; color:black;">Email:</label>
-                        <input type="email" name="email" value="{{ $member->memberemail }}" id="email">
+                        <input type="email" name="memberemail" value="{{ $member->memberemail }}" id="email">
                     </div>
                     <div class="mb-3">
                         <label for="contact" style="padding: 0; color:black;">Contact No:</label>
                         <div class="input-group contactnum">
                             <span class="input-group-text">+63-9</span>
-                            <input type="number" name="contact" value="{{ $member->contactnumber }}" id="contact">
+                            <input type="number" name="contactnumber" value="{{ $member->contactnumber }}" id="contact">
                         </div>
                     </div>
                     <div class="d-flex justify-content-between text-center mx-3 mt-4">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-        
+        </form>
     </div>
-</form>
+
 @endsection
